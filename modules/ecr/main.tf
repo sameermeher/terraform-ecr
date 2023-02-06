@@ -1,6 +1,7 @@
 resource "aws_ecr_repository" "ecr_repository" {
   name                 = "${var.asset_id}/${var.name}"
   tags = var.default_tags
+  force_delete = true
 }
 
 resource "aws_ecr_lifecycle_policy" "ecr_policy" {
